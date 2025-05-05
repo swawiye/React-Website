@@ -1,14 +1,3 @@
-// import React from "react";
-// 
-// //Class based components
-// class ReachOut extends React.Component {
-//     render() {
-//         return <h4>Email address: {this.props.email}, Phone: {this.props.phone} & LinkedIn: {this.props.linkedin}</h4>
-//     }
-// }
-// export default ReachOut;
-//import { useState } from "react";
-
 import { useState, useEffect } from "react";
 
 const Contact = () => {
@@ -16,7 +5,6 @@ const Contact = () => {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
 
     const handleInput = (event) => {
         const { name, value } = event.target;
@@ -47,7 +35,6 @@ const Contact = () => {
     const validate = (values) => {
         const errors = {};
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
         if (!values.username) {
             errors.username = "Username is required";
@@ -61,10 +48,10 @@ const Contact = () => {
             errors.email = "Invalid email format";
         }
 
-        if (!values.password) {
-            errors.password = "Password is required";
-        } else if (!passwordRegex.test(values.password)) {
-            errors.password = "Password must be more than 8 characters, include uppercase and lowercase characters & a number";
+        if (!values.message) {
+            errors.message = "Message is required";
+        } else if (values.message.length < 301) {
+            errors.message = "Message must not exceed 300 characters";
         }
 
         return errors;
@@ -73,14 +60,14 @@ const Contact = () => {
     return (
         <div className="form-container">
             {Object.keys(formErrors).length === 0 && isSubmit && (
-                <div className="success">Sign In successful</div>
+                <div className="success">Message sent!</div>
             )}
 
             <form onSubmit={handleSubmit} className="contact-form">
-                <h3>Reach out to me</h3>
+                <h3>Reach out to us</h3>
 
                 <div>
-                    <label className="form-label">Username</label>
+                    <label className="form-label">Name</label>
                     <input
                         type="text"
                         name="username"
@@ -104,32 +91,23 @@ const Contact = () => {
                 </div>
 
                 <div>
-                    <label className="form-label">Password</label>
-                    <div className="password-wrapper">
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            name="password"
-                            className={`form-input ${formErrors.password ? "input-error" : ""}`}
-                            value={formValues.password}
-                            onChange={handleInput}
-                        />
-                        <button
-                            type="button"
-                            className="toggle-password"
-                            onClick={() => setShowPassword(!showPassword)}
-                        >
-                            {showPassword ? "Hide" : "Show"}
-                        </button>
-                    </div>
-                    {formErrors.password && <p className="error">{formErrors.password}</p>}
+                    <label className="form-label">Message</label>
+                    <textarea
+                        type="text"
+                        name="message"
+                        className={`form-input ${formErrors.message ? "input-error" : ""}`}
+                        value={formValues.message}
+                        onChange={handleInput}
+                    />
+                    {formErrors.message && <p className="error">{formErrors.message}</p>}
                 </div>
 
                 <button type="submit">Send</button>
             </form>
 
-            <h3>Phone: +254701374708</h3>
-            <h3>Email address: sovereign.wawiye@gmail.com</h3>
-            <h3>LinkedIn: Sovereign Wawiye</h3>
+            <h3>Phone: +254707474788</h3>
+            <h3>Email address: greenifyorg@gmail.com</h3>
+            <h3>Twitter: Greenify</h3>
         </div>
     );
 };

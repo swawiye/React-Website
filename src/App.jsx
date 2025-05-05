@@ -1,10 +1,10 @@
+//React router
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+//Pages
 import HomeContent from './pages/Home';
-//Embedding expressions
 import AboutContent from './pages/About'
-//Class based components
 import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 
 //Navbar
 import Navbar from './pages/Navbar';
@@ -12,18 +12,6 @@ import Navbar from './pages/Navbar';
 import Dashboard from './pages/Dashboard';
 
 function App() {
-  //let Component
-  //switch (window.location.pathname) {
-  //  case "/":
-  //    Component = HomeContent
-  //    break
-  //  case "/aboutme":
-  //    Component = QuestionContent
-  //    break
-  //  case "/contactme":
-  //    Component = ReachOut
-  //    break
-  //}
   return(
     <Router>
         <Navbar/>
@@ -31,8 +19,9 @@ function App() {
         <div className='container'>
           <Routes>
             <Route path="/" element={<HomeContent/>}/>
-            <Route path="/aboutme" element={<AboutContent/>}/>
-            <Route path="/contactme" element={<Contact/>}/>
+            <Route path="/about" element={<AboutContent/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/projects" element={<Projects/>}/>
           </Routes>
         </div>
     </Router>

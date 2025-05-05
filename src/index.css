@@ -1,25 +1,27 @@
+/*Dashboard*/
 .dash-container {
-    margin: 3rem;
-    text-align: center;
-    background-color: rgb(251, 199, 207);
-    padding: 2rem;
-    border-radius: 1rem;
-    color: rgb(248, 135, 152);
-    box-shadow: 3rem black;
+  margin: 3rem;
+  text-align: center;
+  background-color: rgb(178, 213, 178);
+  padding: 2rem;
+  border-radius: 1rem;
+  color: rgb(76, 88, 76);
+  box-shadow: 3rem black;
 }
 
 button {
-    background-color: rgb(248, 135, 152);
-    border: none;
-    padding: 5px;
-    border-radius: 6px;
+  background-color: rgb(109, 182, 109);
+  border: none;
+  padding: 5px;
+  border-radius: 6px;
 }
 
 button:hover {
-    background-color: rgb(222, 84, 104);
+  background-color: rgb(240, 246, 240);
 }
 
-.interest-cards {
+/*Project cards*/
+.project-cards {
     display: flex;
     flex-wrap: wrap; /* Allows wrapping to the next line if needed */
     gap: 1rem;
@@ -27,8 +29,8 @@ button:hover {
     padding: 1rem;
 }
 
-.interest-card {
-    background-color: rgb(251, 199, 207);
+.project-card {
+    background-color: rgb(178, 213, 178);
     border: none;
     padding: 1rem;
     border-radius: 8px;
@@ -73,14 +75,14 @@ button:hover {
 
 .form-input:focus {
   outline: none;
-  border-color: rgb(243, 153, 166);
+  border-color: rgb(178, 213, 178);
 }
 
 button[type="submit"] {
   width: 100%;
   padding: 0.75rem;
   font-size: 1rem;
-  background-color: rgb(251, 199, 207);
+  background-color: rgb(178, 213, 178);
   color: white;
   border: none;
   border-radius: 6px;
@@ -89,7 +91,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: rgb(243, 153, 166);
+  background-color: rgb(116, 179, 116);
 }
 
 h3 {
@@ -112,20 +114,4 @@ h3 {
     border: 1px solid #c3e6cb;
     border-radius: 4px;
     text-align: center;
-}
-
-.password-wrapper {
-    position: relative;
-    display: flex;
-}
-
-.toggle-password {
-    margin-left: 8px;
-    background-color: rgb(251, 199, 207);
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
-    border-radius: 4px;
-    height: 44px;
-    color: white;
 }
