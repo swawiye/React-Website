@@ -115,3 +115,26 @@ h3 {
     border-radius: 4px;
     text-align: center;
 }
+/*Dark mode settings*/
+.dark-theme .dash-container {
+  background-color: darkseagreen;
+  color: #e0e0e0;
+}
+
+.dark-theme button {
+  background-color: #444;
+  color: white;
+}
+
+.dark-theme button:hover {
+  background-color: #666;
+}
+
+.dark-theme .project-card {
+  color: #444;
+}
+
+.dark-theme .contacts {
+  color: white;
+}
+

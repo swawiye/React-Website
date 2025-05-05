@@ -50,6 +50,20 @@ body {
     background-color: rgb(178, 213, 178);
 }
 
+/* Light theme (default) */
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
+/* Dark theme */
+.dark-theme {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+
+
 
 
 
